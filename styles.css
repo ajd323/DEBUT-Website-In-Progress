@@ -99,11 +99,10 @@ nav::before {
 .nav-logo { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
 
 .nav-name {
-  font-size:      14px;
-  font-weight:    500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color:          var(--text);
+  font-size:      22px;
+  font-weight:    700;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .nav-links { display: flex; gap: 32px; align-items: center; }
@@ -307,20 +306,20 @@ footer {
 }
 
 .hero-eyebrow {
-  font-size:      14px;
-  letter-spacing: 0.22em;
+  font-size:      12px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color:          var(--red);
-  margin-bottom:  20px;
+  margin-bottom:  16px;
   display:        flex;
   align-items:    center;
-  gap:            12px;
+  gap:            10px;
 }
 
 .hero-eyebrow::before {
   content:    '';
   display:    block;
-  width:      32px; height: 1px;
+  width:      24px; height: 1px;
   background: var(--red);
 }
 
