@@ -27,7 +27,7 @@ function showPage(name) {
   document.getElementById('page-' + name).classList.add('active');
 
   // Highlight the matching nav link
-  const pages = ['home', 'about', 'members', 'apply', 'sponsors'];
+  const pages = ['home', 'about', 'members', 'apply', 'sponsors', 'rnd-devices'];
   const links = document.querySelectorAll('.nav-link');
   const index = pages.indexOf(name);
   if (index !== -1) links[index].classList.add('active');

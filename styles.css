@@ -1030,3 +1030,52 @@ footer {
   color:       var(--text-dim);
   max-width:   400px;
 }
+
+
+/* --------------------------------------------------------------------------
+   16. R&D Devices Page
+   -------------------------------------------------------------------------- */
+.rnd-hero {
+  padding:       72px 52px 60px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.rnd-content {
+  padding: 72px 52px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.device-block {
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.device-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.device-year {
+  font-size:      14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color:          var(--red);
+  margin-bottom:  8px;
+}
+
+.device-name {
+  font-family: var(--sans);
+  font-size:   24px;
+  font-weight: 400;
+  color:       var(--text);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.device-desc {
+  font-size:   16px;
+  color:       var(--text-mid);
+  line-height: 1.7;
+}
