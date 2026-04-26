@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cornell DEBUT — Biomedical Engineering Project Team</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-brand" onclick="showPage('home')">
+    <div class="nav-logo-ring">D</div>
+    <span class="nav-name">Cornell DEBUT</span>
+  </div>
+  <div class="nav-links">
+    <button class="nav-link active" onclick="showPage('home')">Home</button>
+    <button class="nav-link" onclick="showPage('about')">About</button>
+    <button class="nav-link" onclick="showPage('members')">Members</button>
+    <button class="nav-link" onclick="showPage('apply')">Apply</button>
+    <button class="nav-link" onclick="showPage('sponsors')">Sponsors</button>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     HOME PAGE
+     ══════════════════════════════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Biomedical Engineering Project Team</div>
+      <h1 class="hero-title">Engineering <em>solutions</em><br>that matter.</h1>
+      <p class="hero-desc">Cornell DEBUT is an undergraduate project team that develops innovative biomedical devices — from initial concept through prototype — and competes in VentureWell's national DEBUT competition.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="showPage('apply')">Apply Now</button>
+        <button class="btn-outline" onclick="showPage('about')">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">30+</div>
+      <div class="stat-label">Active Members</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Majors Represented</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Colleges at Cornell</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Years Competing</div>
+    </div>
+  </div>
+
+  <!-- Mission + Subteam Cards -->
+  <section class="home-section">
+    <div class="two-col">
+      <div class="two-col-text">
+        <div class="section-label">Our Mission</div>
+        <h2 class="section-title">Developing <em>innovative solutions</em> to biomedical needs.</h2>
+        <p class="section-body">We are a team of undergraduates from across Cornell's colleges who come together to develop novel solutions for real biomedical problems. After two years of research and development, our project is submitted to VentureWell's DEBUT competition — judged on innovation, feasibility, marketability, and patentability.</p>
+        <p class="section-body" style="margin-top:14px;">More than twenty universities — including Columbia and Johns Hopkins — compete annually for up to $20,000.</p>
+        <div style="margin-top:28px;">
+          <a href="https://venturewell.org/debut/" target="_blank" class="btn-outline" style="text-decoration:none;display:inline-block;">Learn About DEBUT →</a>
+        </div>
+      </div>
+      <div class="two-col-aside">
+        <div class="subteam-cards" style="margin-top:0;">
+          <div class="subteam-card">
+            <div class="subteam-card-num">01</div>
+            <div class="subteam-card-name">Phase I</div>
+            <div class="subteam-card-desc">Brainstorming and designing solutions to current biomedical problems. Analyzing gaps in innovation to select a project idea.</div>
+          </div>
+          <div class="subteam-card">
+            <div class="subteam-card-num">02</div>
+            <div class="subteam-card-name">Phase II</div>
+            <div class="subteam-card-desc">Prototype development and testing of the Phase I concept. Submitting the final project to the DEBUT competition.</div>
+          </div>
+          <div class="subteam-card">
+            <div class="subteam-card-num">03</div>
+            <div class="subteam-card-name">Business</div>
+            <div class="subteam-card-desc">Patent searches, market analysis, economic feasibility, budgeting, sponsorship, and team operations.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alumni Placement Ticker -->
+  <!-- TO UPDATE: add or remove .ticker-item blocks below (duplicate both sets to keep the loop seamless) -->
+  <div class="alumni-strip">
+    <div class="alumni-strip-label">Alumni placements</div>
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <!-- First set -->
+        <div class="ticker-item"><svg height="18" viewBox="0 0 120 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="18" font-weight="500" letter-spacing="1" fill="white">REGENERON</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 60 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="20" font-weight="300" letter-spacing="2" fill="white">MERCK</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 60 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="20" font-weight="300" letter-spacing="2" fill="white">PFIZER</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 180 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="16" font-weight="300" letter-spacing="2" fill="white">JOHNSON &amp; JOHNSON</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 110 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="18" font-weight="300" letter-spacing="2" fill="white">MEDTRONIC</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 200 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="14" font-weight="300" letter-spacing="2" fill="white">BOSTON SCIENTIFIC</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 150 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="16" font-weight="300" letter-spacing="2" fill="white">JOHNS HOPKINS</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 90 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="18" font-weight="300" letter-spacing="2" fill="white">NOVARTIS</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 90 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="18" font-weight="300" letter-spacing="2" fill="white">MCKINSEY</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 70 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="18" font-weight="300" letter-spacing="2" fill="white">ABBVIE</text></svg></div>
+        <!-- Duplicate set (required for seamless CSS loop — keep in sync with first set) -->
+        <div class="ticker-item"><svg height="18" viewBox="0 0 120 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="18" font-weight="500" letter-spacing="1" fill="white">REGENERON</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 60 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="20" font-weight="300" letter-spacing="2" fill="white">MERCK</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 60 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="20" font-weight="300" letter-spacing="2" fill="white">PFIZER</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 180 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="16" font-weight="300" letter-spacing="2" fill="white">JOHNSON &amp; JOHNSON</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 110 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="18" font-weight="300" letter-spacing="2" fill="white">MEDTRONIC</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 200 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="14" font-weight="300" letter-spacing="2" fill="white">BOSTON SCIENTIFIC</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 150 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="16" font-weight="300" letter-spacing="2" fill="white">JOHNS HOPKINS</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 90 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="18" font-weight="300" letter-spacing="2" fill="white">NOVARTIS</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 90 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="18" font-weight="300" letter-spacing="2" fill="white">MCKINSEY</text></svg></div>
+        <div class="ticker-item"><svg height="18" viewBox="0 0 70 30" fill="none"><text y="22" font-family="DM Sans, sans-serif" font-size="18" font-weight="300" letter-spacing="2" fill="white">ABBVIE</text></svg></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-brand">Cornell DEBUT — Biomedical Engineering Project Team</div>
+    <div class="footer-links">
+      <a href="mailto:debut@cornell.edu" class="footer-link">debut@cornell.edu</a>
+      <span class="footer-link" onclick="showPage('apply')">Apply</span>
+      <span class="footer-link" onclick="showPage('sponsors')">Sponsors</span>
+    </div>
+    <div class="footer-copy">© 2025 Cornell DEBUT. A registered student organization of Cornell University.</div>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     ABOUT PAGE
+     ══════════════════════════════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div class="page-eyebrow">About Us</div>
+    <h1 class="page-title">Who we are.</h1>
+    <p class="page-subtitle">An undergraduate project team developing biomedical innovations and competing nationally against top universities for up to $20,000.</p>
+  </div>
+
+  <div class="about-body">
+
+    <!-- What is DEBUT -->
+    <div style="max-width:800px; margin-bottom:64px;">
+      <div class="section-label">The Competition</div>
+      <h2 style="font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:18px;line-height:1.3;">What is DEBUT?</h2>
+      <p style="font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:16px;">DEBUT — Design by Biomedical Undergraduate Teams — is a national competition that recognizes undergraduate excellence in biomedical design. Hosted by VentureWell, it challenges students to solve real-world healthcare problems through a full product development process.</p>
+      <p style="font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:16px;">Submissions are judged on the significance of the problem addressed, the impact on users and clinical care, the innovative design, a working prototype, market potential, economic feasibility, and patentability. More than twenty universities — including Columbia and Johns Hopkins — compete annually for up to $20,000.</p>
+      <a href="https://venturewell.org/debut/" target="_blank" style="font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);text-decoration:none;">Venturewell.org →</a>
+    </div>
+
+    <!-- Analyst Roles -->
+    <div style="border-top:0.5px solid var(--border);padding-top:56px;margin-bottom:56px;">
+      <div class="section-label">Analyst Roles</div>
+      <h2 style="font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:28px;line-height:1.3;">What will you work on?</h2>
+      <div class="role-cards">
+        <div class="role-card">
+          <div class="role-card-label">R&amp;D</div>
+          <div class="role-card-content">
+            <h3>Research &amp; Development Analyst</h3>
+            <p>R&amp;D analysts are the primary drivers of project brainstorming and development. They analyze gaps in biomedical innovation to generate ideas, then work with CAD and other tools before moving into the lab to develop and test prototypes in the rapid-prototyping lab and machine shop.</p>
+          </div>
+        </div>
+        <div class="role-card">
+          <div class="role-card-label">Business</div>
+          <div class="role-card-content">
+            <h3>Economic / Business Analyst</h3>
+            <p>Business analysts work alongside R&amp;D to bring each project to life. They conduct patent searches to assess uniqueness, research regulatory pathways, generate market impact analyses, determine per-unit costs, and take point on writing the final competition submission report.</p>
+          </div>
+        </div>
+        <div class="role-card">
+          <div class="role-card-label">Operations</div>
+          <div class="role-card-content">
+            <h3>Operations Analyst</h3>
+            <p>Ops analysts ensure the efficiency and continued operations of the team. They manage the budget, lead fundraising, negotiate sponsorships, handle professional outreach, run recruitment, and manage the website and social media presence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Composition -->
+    <div style="border-top:0.5px solid var(--border);padding-top:56px;margin-bottom:56px;">
+      <div class="section-label">Team Composition</div>
+      <h2 style="font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:16px;line-height:1.3;">Our members come from across Cornell.</h2>
+      <p style="font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:24px;">Students from 5 colleges and over 15 majors and minors, all years, from around the world.</p>
+      <div class="majors-list">
+        <span class="major-tag">Biomedical Engineering</span>
+        <span class="major-tag">Chemical Engineering</span>
+        <span class="major-tag">Biological Engineering</span>
+        <span class="major-tag">Biological Sciences</span>
+        <span class="major-tag">Computer Science</span>
+        <span class="major-tag">Mechanical Engineering</span>
+        <span class="major-tag">Operations Research</span>
+        <span class="major-tag">Information Science</span>
+        <span class="major-tag">Industrial &amp; Labor Relations</span>
+        <span class="major-tag">Applied Economics</span>
+        <span class="major-tag">&amp; more</span>
+      </div>
+    </div>
+
+    <!-- Project Cycle Timeline -->
+    <div style="border-top:0.5px solid var(--border);padding-top:56px;">
+      <div class="section-label">Project Cycle</div>
+      <h2 style="font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:8px;line-height:1.3;">Two years from concept to competition.</h2>
+      <div class="timeline">
+        <div class="timeline-row">
+          <div class="timeline-year">Y1</div>
+          <div class="timeline-content">
+            <h4>Phase I — Research &amp; Design</h4>
+            <p>Teams conduct in-depth literature reviews, identify unmet clinical needs, generate and evaluate multiple design concepts, and produce comprehensive design reports. The year concludes with selecting one final concept to advance into Phase II.</p>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-year">Y2</div>
+          <div class="timeline-content">
+            <h4>Phase II — Prototype &amp; Compete</h4>
+            <p>Teams develop a working prototype based on the Phase I design, conduct testing and iteration, complete the business case with patent searches and market analysis, then submit the final package to the DEBUT national competition in late spring.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-brand">Cornell DEBUT — Biomedical Engineering Project Team</div>
+    <div class="footer-links">
+      <a href="mailto:debut@cornell.edu" class="footer-link">debut@cornell.edu</a>
+      <span class="footer-link" onclick="showPage('apply')">Apply</span>
+      <span class="footer-link" onclick="showPage('sponsors')">Sponsors</span>
+    </div>
+    <div class="footer-copy">© 2025 Cornell DEBUT. A registered student organization of Cornell University.</div>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     MEMBERS PAGE
+     To update members: edit the .subteam-section blocks below.
+     Each member needs a .member-card with:
+       - <img src="images/members/FILENAME.jpg">
+       - <div class="member-name">First Last</div>
+     Subteam leads get a <span class="member-lead-tag">Lead</span> after their name.
+     ══════════════════════════════════════════════════════════════════════ -->
+<div id="page-members" class="page">
+  <div class="members-hero">
+    <div class="page-eyebrow">Biomedical Engineering Project Team</div>
+    <h1 class="page-title">Our Team.</h1>
+    <p class="page-subtitle">30 engineers and scientists across six subteams, working on real biomedical devices from concept to competition.</p>
+  </div>
+
+  <!-- Subteam filter buttons — data-team must match the data-team on each .subteam-section -->
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterTeam('all', this)">All</button>
+    <button class="filter-btn" onclick="filterTeam('leads', this)">Team Leads</button>
+    <button class="filter-btn" onclick="filterTeam('1a', this)">Phase 1A</button>
+    <button class="filter-btn" onclick="filterTeam('1b', this)">Phase 1B</button>
+    <button class="filter-btn" onclick="filterTeam('2a', this)">Phase 2A</button>
+    <button class="filter-btn" onclick="filterTeam('2b', this)">Phase 2B</button>
+    <button class="filter-btn" onclick="filterTeam('business', this)">Business</button>
+  </div>
+
+  <div class="members-content">
+
+    <!-- ── Team Leads ── -->
+    <div class="subteam-section" data-team="leads">
+      <div class="subteam-header">
+        <span class="subteam-section-label">Leadership</span>
+        <span class="subteam-section-title">Team Leads</span>
+      </div>
+      <div class="members-grid">
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Carol_Lyu.JPG" alt="Carol Lyu">
+          <div class="member-info"><div class="member-name">Carol Lyu</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/sally_scofield.JPG" alt="Sally Scofield">
+          <div class="member-info"><div class="member-name">Sally Scofield</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Phase 1A ── -->
+    <div class="subteam-section" data-team="1a">
+      <div class="subteam-header">
+        <span class="subteam-section-label">Subteam</span>
+        <span class="subteam-section-title">Phase 1A</span>
+      </div>
+      <div class="members-grid">
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Ian_Vann.JPG" alt="Ian Vann">
+          <div class="member-info"><div class="member-name">Ian Vann<span class="member-lead-tag">Lead</span></div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Aiko_ShJPG.jpg" alt="Aiko Sh">
+          <div class="member-info"><div class="member-name">Aiko Sh</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Avery_Chen.JPG" alt="Avery Chen">
+          <div class="member-info"><div class="member-name">Avery Chen</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Nathan_Pal.JPG" alt="Nathan Pal">
+          <div class="member-info"><div class="member-name">Nathan Pal</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Veda_Kamaraju.JPG" alt="Veda Kamaraju">
+          <div class="member-info"><div class="member-name">Veda Kamaraju</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Zayaan_Hussain.JPG" alt="Zayaan Hussain">
+          <div class="member-info"><div class="member-name">Zayaan Hussain</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Phase 1B ── -->
+    <div class="subteam-section" data-team="1b">
+      <div class="subteam-header">
+        <span class="subteam-section-label">Subteam</span>
+        <span class="subteam-section-title">Phase 1B</span>
+      </div>
+      <div class="members-grid">
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Megh_Pad.JPG" alt="Megh Pad">
+          <div class="member-info"><div class="member-name">Megh Pad<span class="member-lead-tag">Lead</span></div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Alexander_Yeung.JPG" alt="Alexander Yeung">
+          <div class="member-info"><div class="member-name">Alexander Yeung</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Bhumika_Iroji.JPG" alt="Bhumika Iroji">
+          <div class="member-info"><div class="member-name">Bhumika Iroji</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Holbrook_Langley.JPG" alt="Holbrook Langley">
+          <div class="member-info"><div class="member-name">Holbrook Langley</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/NinaWilliams.JPG" alt="Nina Williams">
+          <div class="member-info"><div class="member-name">Nina Williams</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Syon_Khatter.jpg" alt="Syon Khatter">
+          <div class="member-info"><div class="member-name">Syon Khatter</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Phase 2A ── -->
+    <div class="subteam-section" data-team="2a">
+      <div class="subteam-header">
+        <span class="subteam-section-label">Subteam</span>
+        <span class="subteam-section-title">Phase 2A</span>
+      </div>
+      <div class="members-grid">
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Jess_Rakoczy.jpg" alt="Jess Rakoczy">
+          <div class="member-info"><div class="member-name">Jess Rakoczy<span class="member-lead-tag">Lead</span></div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/AllySchwartz.JPG" alt="Ally Schwartz">
+          <div class="member-info"><div class="member-name">Ally Schwartz</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Connie_Anaganos.JPG" alt="Connie Anaganos">
+          <div class="member-info"><div class="member-name">Connie Anaganos</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Jasmin_Foster.JPG" alt="Jasmin Foster">
+          <div class="member-info"><div class="member-name">Jasmin Foster</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Nitish_Bhamidipati.JPG" alt="Nitish Bhamidipati">
+          <div class="member-info"><div class="member-name">Nitish Bhamidipati</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Rahul_Ramarao.JPG" alt="Rahul Ramarao">
+          <div class="member-info"><div class="member-name">Rahul Ramarao</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Viviana_Esquivel.JPG" alt="Viviana Esquivel">
+          <div class="member-info"><div class="member-name">Viviana Esquivel</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Phase 2B ── -->
+    <div class="subteam-section" data-team="2b">
+      <div class="subteam-header">
+        <span class="subteam-section-label">Subteam</span>
+        <span class="subteam-section-title">Phase 2B</span>
+      </div>
+      <div class="members-grid">
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Andrew_Leibowitz.JPG" alt="Andrew Leibowitz">
+          <div class="member-info"><div class="member-name">Andrew Leibowitz<span class="member-lead-tag">Lead</span></div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/arielle_schwarzberg.JPG" alt="Arielle Schwarzberg">
+          <div class="member-info"><div class="member-name">Arielle Schwarzberg</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Asher_C_Photo.JPG" alt="Asher C">
+          <div class="member-info"><div class="member-name">Asher C</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/EmmaWeiss.JPG" alt="Emma Weiss">
+          <div class="member-info"><div class="member-name">Emma Weiss</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Nana_Jiraphanphong_.JPG" alt="Nana Jiraphanphong">
+          <div class="member-info"><div class="member-name">Nana Jiraphanphong</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Sahaar_Khoja.JPG" alt="Sahaar Khoja">
+          <div class="member-info"><div class="member-name">Sahaar Khoja</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Business ── -->
+    <div class="subteam-section" data-team="business">
+      <div class="subteam-header">
+        <span class="subteam-section-label">Subteam</span>
+        <span class="subteam-section-title">Business</span>
+      </div>
+      <div class="members-grid">
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Gabriel_Benavidez.JPG" alt="Gabriel Benavidez">
+          <div class="member-info"><div class="member-name">Gabriel Benavidez<span class="member-lead-tag">Lead</span></div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Carolin_Lamb.JPG" alt="Carolin Lamb">
+          <div class="member-info"><div class="member-name">Carolin Lamb</div></div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/members/Caroline_Lamb.JPG" alt="Caroline Lamb">
+          <div class="member-info"><div class="member-name">Caroline Lamb</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-brand">Cornell DEBUT — Biomedical Engineering Project Team</div>
+    <div class="footer-links">
+      <a href="mailto:debut@cornell.edu" class="footer-link">debut@cornell.edu</a>
+      <span class="footer-link" onclick="showPage('apply')">Apply</span>
+    </div>
+    <div class="footer-copy">© 2025 Cornell DEBUT. A registered student organization of Cornell University.</div>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     APPLY PAGE
+     To toggle application status: swap .apply-closed-badge ↔ .apply-open-badge
+     To add an application link: replace the <span class="apply-pos-link"> with an <a> tag
+     ══════════════════════════════════════════════════════════════════════ -->
+<div id="page-apply" class="page">
+  <div class="apply-hero">
+    <div class="page-eyebrow">Recruitment</div>
+    <h1 class="page-title">Join DEBUT.</h1>
+    <p class="page-subtitle">We recruit new members every semester. Applications are reviewed on a rolling basis. Reach out to debut@cornell.edu with any questions.</p>
+  </div>
+
+  <div class="apply-body">
+
+    <!-- Left column: positions & links -->
+    <div>
+      <!-- Change class to apply-open-badge when applications are open -->
+      <div class="apply-closed-badge">Applications currently closed</div>
+
+      <h2 style="font-family:var(--serif);font-size:26px;font-weight:400;margin-bottom:16px;line-height:1.3;">Open Positions</h2>
+      <p style="font-size:14px;color:var(--text-dim);margin-bottom:28px;line-height:1.75;">When applications open, positions are available across R&amp;D (Phase I &amp; II) and Business subteams. Both the DEBUT-specific application and the Cornell General Project Team Application must be submitted together.</p>
+
+      <div class="apply-positions">
+        <div class="apply-position">
+          <div class="apply-pos-title">R&amp;D Analyst — Phase I</div>
+          <div class="apply-pos-desc">Work on brainstorming and early-stage design. Open to all years. CAD experience helpful but not required.</div>
+          <!-- Replace span with <a href="YOUR_LINK"> when open -->
+          <span class="apply-pos-link">Application link (when open) →</span>
+        </div>
+        <div class="apply-position">
+          <div class="apply-pos-title">R&amp;D Analyst — Phase II</div>
+          <div class="apply-pos-desc">Prototype development and lab testing. Sophomores, juniors, and seniors preferred.</div>
+          <!-- Replace span with <a href="YOUR_LINK"> when open -->
+          <span class="apply-pos-link">Application link (when open) →</span>
+        </div>
+        <div class="apply-position">
+          <div class="apply-pos-title">Business / Econ Analyst</div>
+          <div class="apply-pos-desc">Patent research, market analysis, economic feasibility, report writing, and operations. All majors welcome.</div>
+          <a href="https://forms.gle/CdNKHcwE5JvH8ytH8" target="_blank" class="apply-pos-link">Spring 2026 Econ &amp; Business Application →</a>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;">
+        <div style="font-size:12px;color:var(--text-dim);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">Also required for all applicants</div>
+        <a href="https://cornell.ca1.qualtrics.com/jfe/form/SV_bp7LpXCVGOYVSoC" target="_blank" class="btn-outline" style="text-decoration:none;display:inline-block;">Cornell General Project Team Application →</a>
+      </div>
+
+      <div style="margin-top:40px;padding:20px 24px;border:0.5px solid var(--border);background:var(--bg2);">
+        <div style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;">Questions?</div>
+        <div style="font-size:14px;color:var(--text-mid);">Reach out at <a href="mailto:debut@cornell.edu" style="color:var(--red);text-decoration:none;">debut@cornell.edu</a></div>
+      </div>
+    </div>
+
+    <!-- Right column: FAQ -->
+    <div>
+      <h2 style="font-family:var(--serif);font-size:26px;font-weight:400;margin-bottom:28px;line-height:1.3;">Frequently asked questions.</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Do I need to be a BME major to join?</div>
+          <div class="faq-a">Not at all. Our team includes students from over 15 majors across 5 colleges at Cornell — from Computer Science to Industrial &amp; Labor Relations. Passion for biomedical innovation and a willingness to learn are what matter most.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">When do applications open?</div>
+          <div class="faq-a">We recruit at the beginning of each semester — typically in September for fall and January/February for spring. Follow our Instagram or sign up for our newsletter to be notified when applications open.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What year do I need to be?</div>
+          <div class="faq-a">We welcome students of all years. Freshmen are encouraged to apply for Phase I and Business roles. Upperclassmen can apply to any subteam. Phase II tends to require more prior experience in the team's two-year cycle.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">How much time does DEBUT require per week?</div>
+          <div class="faq-a">Expect around 4–6 hours per week including team meetings, subteam work sessions, and independent project work. Time commitments can increase closer to the competition submission deadline in late spring.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What is the application process?</div>
+          <div class="faq-a">You'll need to complete both the DEBUT-specific application and the Cornell General Project Team Application simultaneously. Shortlisted applicants may be invited to a brief interview with team leads. We aim to notify applicants within two weeks of the deadline.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Do I need prior research or engineering experience?</div>
+          <div class="faq-a">It's helpful but not required, especially for Business and Phase I R&amp;D roles. We provide training and mentorship within the team. For Phase II R&amp;D, some hands-on lab or design experience is a plus.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-brand">Cornell DEBUT — Biomedical Engineering Project Team</div>
+    <div class="footer-links">
+      <a href="mailto:debut@cornell.edu" class="footer-link">debut@cornell.edu</a>
+      <span class="footer-link" onclick="showPage('sponsors')">Sponsors</span>
+    </div>
+    <div class="footer-copy">© 2025 Cornell DEBUT. A registered student organization of Cornell University.</div>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     SPONSORS PAGE
+     To add a sponsor logo: place the image in images/sponsors/ and add
+     an <img> tag in the relevant tier section.
+     ══════════════════════════════════════════════════════════════════════ -->
+<div id="page-sponsors" class="page">
+  <div class="sponsors-hero">
+    <div class="page-eyebrow">Sponsorship</div>
+    <h1 class="page-title">Partner with us.</h1>
+    <p class="page-subtitle">Help bring together a team of incredible minds developing novel biomedical innovations at one of the nation's top engineering universities.</p>
+  </div>
+
+  <div class="sponsors-body">
+    <div class="sponsors-intro">
+      <p>Cornell DEBUT sponsors directly fund undergraduate biomedical research and development — giving students the resources to turn ideas into working prototypes and compete on a national stage.</p>
+      <p>Sponsors gain visibility within Cornell Engineering, access to talented students, and the opportunity to support the next generation of biomedical innovators. All contributions are tax-deductible.</p>
+    </div>
+
+    <!-- Benefits -->
+    <div class="section-label" style="margin-bottom:20px;">Why sponsor DEBUT?</div>
+    <div class="sponsor-benefits">
+      <div class="benefit-card">
+        <div class="benefit-icon">I</div>
+        <div class="benefit-title">Innovation Access</div>
+        <div class="benefit-desc">First look at novel biomedical device concepts developed by Cornell undergraduates, with potential for further research and product development partnerships.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">T</div>
+        <div class="benefit-title">Talent Pipeline</div>
+        <div class="benefit-desc">Direct access to high-achieving students across engineering, business, and sciences — future engineers, researchers, and entrepreneurs.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">V</div>
+        <div class="benefit-title">Visibility</div>
+        <div class="benefit-desc">Logo placement on our website, social media recognition, and presence at team events and Cornell Engineering community outreach.</div>
+      </div>
+    </div>
+
+    <!-- Tiers -->
+    <div class="tiers-section">
+      <h2>Sponsorship tiers.</h2>
+      <div class="tiers-grid">
+        <div class="tier-card">
+          <div class="tier-name">Bronze</div>
+          <div class="tier-amount">$250+</div>
+          <ul class="tier-perks">
+            <li>Logo on website</li>
+            <li>Social media mention</li>
+            <li>Tax deduction</li>
+          </ul>
+        </div>
+        <div class="tier-card">
+          <div class="tier-name">Silver</div>
+          <div class="tier-amount">$500+</div>
+          <ul class="tier-perks">
+            <li>Logo on website</li>
+            <li>Social media feature post</li>
+            <li>Newsletter mention</li>
+            <li>Tax deduction</li>
+          </ul>
+        </div>
+        <div class="tier-card featured">
+          <div class="tier-name">Gold</div>
+          <div class="tier-amount">$1,000+</div>
+          <ul class="tier-perks">
+            <li>Prominent logo placement</li>
+            <li>Dedicated social media post</li>
+            <li>Newsletter feature</li>
+            <li>Recruitment table access</li>
+            <li>Tax deduction</li>
+          </ul>
+        </div>
+        <div class="tier-card">
+          <div class="tier-name">Platinum</div>
+          <div class="tier-amount">$2,500+</div>
+          <ul class="tier-perks">
+            <li>Premier logo placement</li>
+            <li>Regular social features</li>
+            <li>Event sponsorship credit</li>
+            <li>Team presentation opportunity</li>
+            <li>Tax deduction</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sponsor-cta">
+        <a href="https://forms.gle/mkMETiC7P8ZuiVJZ9" target="_blank" class="btn-primary" style="text-decoration:none;">Become a Sponsor</a>
+        <a href="https://cornelldebut.org/s/Cornell-2023-2024-Sponsorship-Packet.pdf" target="_blank" class="btn-outline" style="text-decoration:none;">View Sponsorship Packet →</a>
+        <div class="sponsor-cta-text">Questions? Reach us at <a href="mailto:debut@cornell.edu" style="color:var(--red);text-decoration:none;">debut@cornell.edu</a></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-brand">Cornell DEBUT — Biomedical Engineering Project Team</div>
+    <div class="footer-links">
+      <a href="mailto:debut@cornell.edu" class="footer-link">debut@cornell.edu</a>
+      <span class="footer-link" onclick="showPage('apply')">Apply</span>
+    </div>
+    <div class="footer-copy">© 2025 Cornell DEBUT. A registered student organization of Cornell University.</div>
+  </footer>
+</div>
+
+
+<!-- JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

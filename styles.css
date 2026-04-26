@@ -1,0 +1,961 @@
+/* ==========================================================================
+   Cornell DEBUT — Main Stylesheet
+   ==========================================================================
+
+   Table of Contents:
+   1.  Reset & Root Variables
+   2.  Base / Body
+   3.  Navigation
+   4.  Page System (show/hide)
+   5.  Buttons
+   6.  Footer
+   7.  Home — Hero
+   8.  Home — Stats Bar
+   9.  Home — Sections & Layout
+   10. Home — Subteam Cards
+   11. Home — Alumni Ticker
+   12. About Page
+   13. Members Page
+   14. Apply Page
+   15. Sponsors Page
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   1. Reset & Root Variables
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Brand colours */
+  --red:          #b91c1c;
+  --red-dim:      rgba(185, 28, 28, 0.15);
+
+  /* Backgrounds */
+  --bg:           #0c0c0c;
+  --bg2:          #111111;
+  --bg3:          #181818;
+
+  /* Borders */
+  --border:       rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.18);
+
+  /* Text */
+  --text:         #f0ede8;
+  --text-dim:     rgba(240, 237, 232, 0.45);
+  --text-mid:     rgba(240, 237, 232, 0.70);
+
+  /* Typography */
+  --serif:        'EB Garamond', Georgia, serif;
+  --sans:         'DM Sans', sans-serif;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. Base / Body
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:              var(--bg);
+  color:                   var(--text);
+  font-family:             var(--sans);
+  font-size:               16px;
+  line-height:             1.7;
+  -webkit-font-smoothing:  antialiased;
+  overflow-x:              hidden;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. Navigation
+   -------------------------------------------------------------------------- */
+nav {
+  position:        fixed;
+  top:             0;
+  left:            0;
+  right:           0;
+  z-index:         200;
+  height:          60px;
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  padding:         0 52px;
+  background:      rgba(12, 12, 12, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom:   0.5px solid var(--border);
+}
+
+.nav-brand {
+  display:     flex;
+  align-items: center;
+  gap:         11px;
+  cursor:      pointer;
+}
+
+.nav-logo-ring {
+  width:           30px;
+  height:          30px;
+  border-radius:   50%;
+  border:          1.5px solid var(--red);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-family:     var(--serif);
+  font-size:       14px;
+  color:           var(--red);
+}
+
+.nav-name {
+  font-size:      12px;
+  font-weight:    500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color:          var(--text);
+}
+
+.nav-links {
+  display:     flex;
+  gap:         32px;
+  align-items: center;
+}
+
+.nav-link {
+  font-size:      11px;
+  font-weight:    400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--text-dim);
+  cursor:         pointer;
+  transition:     color 0.2s;
+  border:         none;
+  background:     none;
+  font-family:    var(--sans);
+}
+
+.nav-link:hover  { color: var(--text); }
+.nav-link.active { color: var(--red); }
+
+
+/* --------------------------------------------------------------------------
+   4. Page System
+   -------------------------------------------------------------------------- */
+.page {
+  display:    none;
+  padding-top: 60px;
+  min-height: 100vh;
+}
+
+.page.active {
+  display: block;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. Buttons
+   -------------------------------------------------------------------------- */
+.btn-primary {
+  font-size:      11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight:    500;
+  padding:        12px 28px;
+  background:     var(--red);
+  color:          #fff;
+  border:         none;
+  cursor:         pointer;
+  transition:     background 0.2s;
+  font-family:    var(--sans);
+}
+
+.btn-primary:hover { background: #991616; }
+
+.btn-outline {
+  font-size:      11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight:    500;
+  padding:        12px 28px;
+  background:     transparent;
+  color:          var(--text-mid);
+  border:         0.5px solid var(--border-hover);
+  cursor:         pointer;
+  transition:     all 0.2s;
+  font-family:    var(--sans);
+}
+
+.btn-outline:hover {
+  border-color: var(--text-mid);
+  color:        var(--text);
+}
+
+
+/* --------------------------------------------------------------------------
+   6. Footer
+   -------------------------------------------------------------------------- */
+footer {
+  border-top:      0.5px solid var(--border);
+  padding:         40px 52px;
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  flex-wrap:       wrap;
+  gap:             20px;
+}
+
+.footer-brand {
+  font-size:      11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--text-dim);
+}
+
+.footer-links {
+  display: flex;
+  gap:     28px;
+}
+
+.footer-link {
+  font-size:      11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color:          var(--text-dim);
+  text-decoration: none;
+  cursor:         pointer;
+}
+
+.footer-link:hover { color: var(--text); }
+
+.footer-copy {
+  font-size: 12px;
+  color:     rgba(240, 237, 232, 0.2);
+}
+
+
+/* --------------------------------------------------------------------------
+   7. Home — Hero
+   -------------------------------------------------------------------------- */
+.hero {
+  min-height:     92vh;
+  display:        flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding:        0 52px 72px;
+  position:       relative;
+  overflow:       hidden;
+}
+
+.hero-bg {
+  position:   absolute;
+  inset:      0;
+  z-index:    0;
+  background: linear-gradient(165deg, #1a0505 0%, #0c0c0c 55%, #0c0c0c 100%);
+}
+
+.hero-grid {
+  position:          absolute;
+  inset:             0;
+  z-index:           1;
+  background-image:  linear-gradient(var(--border) 1px, transparent 1px),
+                     linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size:   60px 60px;
+  mask-image:        radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+.hero-content {
+  position:   relative;
+  z-index:    2;
+  max-width:  720px;
+}
+
+.hero-eyebrow {
+  font-size:      11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color:          var(--red);
+  margin-bottom:  20px;
+  display:        flex;
+  align-items:    center;
+  gap:            12px;
+}
+
+.hero-eyebrow::before {
+  content:    '';
+  display:    block;
+  width:      32px;
+  height:     1px;
+  background: var(--red);
+}
+
+.hero-title {
+  font-family:    var(--sans);
+  font-size:      clamp(52px, 7vw, 88px);
+  font-weight:    400;
+  line-height:    1.0;
+  letter-spacing: -0.01em;
+  color:          var(--text);
+  margin-bottom:  24px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color:      var(--text-mid);
+}
+
+.hero-desc {
+  font-size:     15px;
+  color:         var(--text-dim);
+  max-width:     480px;
+  line-height:   1.75;
+  margin-bottom: 36px;
+}
+
+.hero-cta {
+  display:   flex;
+  gap:       14px;
+  flex-wrap: wrap;
+}
+
+
+/* --------------------------------------------------------------------------
+   8. Home — Stats Bar
+   -------------------------------------------------------------------------- */
+.stats-bar {
+  border-top:            0.5px solid var(--border);
+  border-bottom:         0.5px solid var(--border);
+  display:               grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+  padding:      32px 52px;
+  border-right: 0.5px solid var(--border);
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-num {
+  font-family: var(--serif);
+  font-size:   42px;
+  color:       var(--text);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size:      11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--text-dim);
+  margin-top:     6px;
+}
+
+
+/* --------------------------------------------------------------------------
+   9. Home — Sections & Layout
+   -------------------------------------------------------------------------- */
+.home-section { padding: 88px 52px; }
+.home-section + .home-section { border-top: 0.5px solid var(--border); }
+
+.section-label {
+  font-size:      10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color:          var(--red);
+  margin-bottom:  20px;
+}
+
+.section-title {
+  font-family:   var(--sans);
+  font-size:     clamp(28px, 3.5vw, 44px);
+  font-weight:   400;
+  line-height:   1.2;
+  color:         var(--text);
+  margin-bottom: 20px;
+}
+
+.section-title em { font-style: italic; }
+
+.section-body {
+  font-size:   15px;
+  color:       var(--text-dim);
+  line-height: 1.8;
+  max-width:   640px;
+}
+
+.two-col {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   80px;
+  align-items:           start;
+}
+
+
+/* --------------------------------------------------------------------------
+   10. Home — Subteam Cards
+   -------------------------------------------------------------------------- */
+.subteam-cards {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1px;
+  background:            var(--border);
+  margin-top:            48px;
+}
+
+.subteam-card {
+  background: var(--bg);
+  padding:    32px 28px;
+}
+
+.subteam-card-num {
+  font-family:   var(--serif);
+  font-size:     28px;
+  color:         var(--red);
+  line-height:   1;
+  margin-bottom: 16px;
+}
+
+.subteam-card-name {
+  font-size:      13px;
+  font-weight:    500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom:  10px;
+}
+
+.subteam-card-desc {
+  font-size:   13px;
+  color:       var(--text-dim);
+  line-height: 1.7;
+}
+
+
+/* --------------------------------------------------------------------------
+   11. Home — Alumni Ticker
+   -------------------------------------------------------------------------- */
+.alumni-strip {
+  border-top:    0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  padding:       0;
+  overflow:      hidden;
+}
+
+.alumni-strip-label {
+  font-size:      10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color:          var(--text-dim);
+  padding:        18px 52px 14px;
+  border-bottom:  0.5px solid var(--border);
+}
+
+.ticker-wrap {
+  overflow:               hidden;
+  padding:                28px 0;
+  -webkit-mask-image:     linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image:             linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.ticker {
+  display:     flex;
+  gap:         72px;
+  white-space: nowrap;
+  animation:   ticker 40s linear infinite;
+  align-items: center;
+}
+
+.ticker:hover { animation-play-state: paused; }
+
+.ticker-item {
+  display:     flex;
+  align-items: center;
+  gap:         10px;
+  flex-shrink: 0;
+  opacity:     0.5;
+  transition:  opacity 0.2s;
+}
+
+.ticker-item:hover { opacity: 1; }
+
+.ticker-item img {
+  height:      22px;
+  width:       auto;
+  max-width:   100px;
+  object-fit:  contain;
+  filter:      brightness(0) invert(1);
+  display:     block;
+}
+
+.ticker-item span {
+  font-size:      13px;
+  letter-spacing: 0.06em;
+  color:          rgba(240, 237, 232, 0.8);
+  white-space:    nowrap;
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* --------------------------------------------------------------------------
+   12. About Page
+   -------------------------------------------------------------------------- */
+.about-hero {
+  padding:       72px 52px 60px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.page-eyebrow {
+  font-size:      11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color:          var(--red);
+  margin-bottom:  16px;
+}
+
+.page-title {
+  font-family:  var(--sans);
+  font-size:    clamp(40px, 5vw, 64px);
+  font-weight:  400;
+  line-height:  1.1;
+}
+
+.page-subtitle {
+  font-size:     15px;
+  color:         var(--text-dim);
+  margin-top:    14px;
+  max-width:     560px;
+  line-height:   1.75;
+}
+
+.about-body { padding: 72px 52px; }
+
+.role-cards {
+  display:               grid;
+  grid-template-columns: 1fr;
+  gap:                   1px;
+  background:            var(--border);
+  margin-top:            48px;
+}
+
+.role-card {
+  background:            var(--bg);
+  padding:               28px 32px;
+  display:               grid;
+  grid-template-columns: 140px 1fr;
+  gap:                   28px;
+  align-items:           start;
+}
+
+.role-card-label {
+  font-size:      10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color:          var(--red);
+  padding-top:    4px;
+}
+
+.role-card-content h3 {
+  font-size:     14px;
+  font-weight:   500;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.role-card-content p {
+  font-size:   14px;
+  color:       var(--text-dim);
+  line-height: 1.7;
+}
+
+.majors-list {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       8px;
+  margin-top: 20px;
+}
+
+.major-tag {
+  font-size:      11px;
+  letter-spacing: 0.06em;
+  padding:        5px 12px;
+  border:         0.5px solid var(--border-hover);
+  color:          var(--text-mid);
+}
+
+.timeline        { margin-top: 48px; }
+
+.timeline-row {
+  display:               grid;
+  grid-template-columns: 80px 1fr;
+  gap:                   24px;
+  padding:               24px 0;
+  border-top:            0.5px solid var(--border);
+}
+
+.timeline-year {
+  font-family:  var(--serif);
+  font-size:    22px;
+  color:        var(--red);
+  padding-top:  2px;
+}
+
+.timeline-content h4 {
+  font-size:      13px;
+  font-weight:    500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom:  6px;
+}
+
+.timeline-content p {
+  font-size:   14px;
+  color:       var(--text-dim);
+  line-height: 1.7;
+}
+
+
+/* --------------------------------------------------------------------------
+   13. Members Page
+   -------------------------------------------------------------------------- */
+.members-hero {
+  padding:       72px 52px 60px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.filter-row {
+  display:   flex;
+  gap:       8px;
+  padding:   28px 52px 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-size:      10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding:        7px 18px;
+  background:     transparent;
+  color:          var(--text-dim);
+  border:         0.5px solid var(--border);
+  cursor:         pointer;
+  transition:     all 0.18s;
+  font-family:    var(--sans);
+}
+
+.filter-btn:hover  { border-color: var(--border-hover); color: var(--text); }
+.filter-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
+
+.members-content { padding: 52px 52px 88px; }
+
+.subteam-section { margin-bottom: 60px; }
+
+.subteam-header {
+  margin-bottom:  28px;
+  padding-bottom: 16px;
+  border-bottom:  0.5px solid var(--border);
+  display:        flex;
+  align-items:    baseline;
+  gap:            16px;
+}
+
+.subteam-section-label {
+  font-size:      10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color:          var(--red);
+}
+
+.subteam-section-title {
+  font-family:  var(--sans);
+  font-size:    26px;
+  font-weight:  400;
+}
+
+.members-grid {
+  display:               grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap:                   20px;
+}
+
+.member-photo {
+  width:          100%;
+  aspect-ratio:   3 / 4;
+  object-fit:     cover;
+  object-position: center top;
+  display:        block;
+  filter:         grayscale(20%);
+  transition:     filter 0.35s;
+}
+
+.member-photo:hover { filter: grayscale(0%); }
+
+.member-info {
+  padding:    10px 0 0;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.07);
+}
+
+.member-name {
+  font-size:   13px;
+  font-weight: 400;
+  color:       var(--text);
+}
+
+.member-lead-tag {
+  font-size:      9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--red);
+  margin-left:    6px;
+  vertical-align: middle;
+}
+
+
+/* --------------------------------------------------------------------------
+   14. Apply Page
+   -------------------------------------------------------------------------- */
+.apply-hero {
+  padding:       72px 52px 60px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.apply-body {
+  padding:               72px 52px;
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   80px;
+  align-items:           start;
+}
+
+.apply-closed-badge {
+  display:       inline-block;
+  font-size:     10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding:       6px 14px;
+  border:        0.5px solid rgba(185, 28, 28, 0.4);
+  color:         var(--red);
+  background:    var(--red-dim);
+  margin-bottom: 28px;
+}
+
+.apply-open-badge {
+  display:       inline-block;
+  font-size:     10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding:       6px 14px;
+  border:        0.5px solid rgba(34, 197, 94, 0.4);
+  color:         #4ade80;
+  background:    rgba(34, 197, 94, 0.08);
+  margin-bottom: 28px;
+}
+
+.apply-positions {
+  display:    grid;
+  gap:        1px;
+  background: var(--border);
+  margin-top: 40px;
+}
+
+.apply-position {
+  background: var(--bg);
+  padding:    24px 28px;
+}
+
+.apply-pos-title {
+  font-size:      13px;
+  font-weight:    500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom:  8px;
+}
+
+.apply-pos-desc {
+  font-size:     13px;
+  color:         var(--text-dim);
+  line-height:   1.7;
+  margin-bottom: 14px;
+}
+
+.apply-pos-link {
+  font-size:      11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--red);
+  text-decoration: none;
+}
+
+.apply-pos-link:hover { text-decoration: underline; }
+
+/* FAQ accordion */
+.faq-item { border-bottom: 0.5px solid var(--border); }
+
+.faq-q {
+  font-size:       14px;
+  font-weight:     400;
+  padding:         20px 0;
+  cursor:          pointer;
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  gap:             16px;
+  color:           var(--text);
+}
+
+.faq-q::after {
+  content:    '+';
+  font-size:  18px;
+  color:      var(--text-dim);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+
+.faq-a {
+  font-size:   14px;
+  color:       var(--text-dim);
+  line-height: 1.75;
+  max-height:  0;
+  overflow:    hidden;
+  transition:  max-height 0.3s ease, padding 0.3s;
+}
+
+.faq-item.open .faq-a {
+  max-height: 300px;
+  padding-bottom: 20px;
+}
+
+
+/* --------------------------------------------------------------------------
+   15. Sponsors Page
+   -------------------------------------------------------------------------- */
+.sponsors-hero {
+  padding:       72px 52px 60px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.sponsors-body { padding: 72px 52px; }
+
+.sponsors-intro {
+  max-width:     600px;
+  margin-bottom: 56px;
+}
+
+.sponsors-intro p {
+  font-size:     15px;
+  color:         var(--text-dim);
+  line-height:   1.8;
+  margin-bottom: 16px;
+}
+
+.sponsor-benefits {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1px;
+  background:            var(--border);
+  margin-bottom:         64px;
+}
+
+.benefit-card {
+  background: var(--bg);
+  padding:    28px;
+}
+
+.benefit-icon {
+  font-family:   var(--serif);
+  font-size:     32px;
+  color:         var(--red);
+  margin-bottom: 14px;
+}
+
+.benefit-title {
+  font-size:      13px;
+  font-weight:    500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom:  10px;
+}
+
+.benefit-desc {
+  font-size:   13px;
+  color:       var(--text-dim);
+  line-height: 1.7;
+}
+
+.tiers-section h2 {
+  font-family:   var(--sans);
+  font-size:     32px;
+  font-weight:   400;
+  margin-bottom: 28px;
+}
+
+.tiers-grid {
+  display:               grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:                   1px;
+  background:            var(--border);
+  margin-bottom:         48px;
+}
+
+.tier-card {
+  background: var(--bg);
+  padding:    28px;
+}
+
+.tier-card.featured { background: var(--bg3); }
+
+.tier-name {
+  font-size:      10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color:          var(--text-dim);
+  margin-bottom:  10px;
+}
+
+.tier-amount {
+  font-family:   var(--serif);
+  font-size:     36px;
+  color:         var(--text);
+  line-height:   1;
+  margin-bottom: 16px;
+}
+
+.tier-perks { list-style: none; }
+
+.tier-perks li {
+  font-size:   12px;
+  color:       var(--text-dim);
+  padding:     6px 0;
+  border-top:  0.5px solid var(--border);
+  display:     flex;
+  align-items: start;
+  gap:         8px;
+}
+
+.tier-perks li::before {
+  content:    '—';
+  color:      var(--red);
+  flex-shrink: 0;
+}
+
+.sponsor-cta {
+  display:     flex;
+  gap:         14px;
+  flex-wrap:   wrap;
+  align-items: center;
+}
+
+.sponsor-cta-text {
+  font-size:   14px;
+  color:       var(--text-dim);
+  max-width:   400px;
+}
