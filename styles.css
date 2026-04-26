@@ -248,7 +248,7 @@ footer {
   inset:      0;
   z-index:    0;
   background: linear-gradient(165deg, #f8f8f8 0%, #ffffff 55%, #ffffff 100%),
-              url('static/DEBUT_LOGOS/DEBUT_MAIN_LOGO.png') center center / contain no-repeat;
+              url('static/DEBUT_MAIN_PAGE/DEBUT_Full_Team_Photo.jpeg') center center / contain no-repeat;
   opacity:    0.05;
 }
 
