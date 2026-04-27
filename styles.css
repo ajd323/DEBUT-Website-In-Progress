@@ -230,6 +230,18 @@ footer {
   background:  var(--bg);
 }
 
+/* Faint decorative circle top-right */
+.hero::after {
+  content:      '';
+  position:     absolute;
+  top: -60px; right: 40px;
+  width:        280px; height: 280px;
+  border:       1px solid rgba(185,28,28,0.08);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index:      1;
+}
+
 .hero-bg {
   position:   absolute;
   inset:      0;
@@ -409,7 +421,22 @@ footer {
 /* --------------------------------------------------------------------------
    9. Home — Sections & Layout
    -------------------------------------------------------------------------- */
-.home-section { padding: 88px 52px; }
+.home-section { 
+  padding: 88px 52px; 
+  position: relative;
+}
+
+/* Faint decorative circle top-right */
+.home-section::after {
+  content:      '';
+  position:     absolute;
+  top: -40px; right: 60px;
+  width:        200px; height: 200px;
+  border:       1px solid rgba(185,28,28,0.06);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index:      0;
+}
 .home-section + .home-section { border-top: 0.5px solid var(--border); }
 
 .section-label {
@@ -438,6 +465,46 @@ footer {
   grid-template-columns: 1fr 1fr;
   gap:                   80px;
   align-items:           start;
+  position:              relative;
+}
+
+/* Floating photos in bubbles */
+.floating-photo {
+  position:        absolute;
+  border-radius:   50%;
+  border:          2px solid rgba(185,28,28,0.1);
+  overflow:        hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow:      0 4px 12px rgba(0,0,0,0.08);
+  transition:      transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-photo:hover {
+  transform:  scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.floating-photo-1 {
+  width:  120px;
+  height: 120px;
+  top:    -30px;
+  right:  -20px;
+}
+
+.floating-photo-2 {
+  width:  80px;
+  height: 80px;
+  bottom: 40px;
+  right:  20px;
+}
+
+.floating-photo-3 {
+  width:  100px;
+  height: 100px;
+  top:    50%;
+  left:   -40px;
+  transform: translateY(-50%);
 }
 
 
@@ -626,7 +693,48 @@ footer {
 
 .page-subtitle { font-size: 18px; color: var(--text-dim); margin-top: 14px; max-width: 560px; line-height: 1.75; }
 
-.about-body { padding: 72px 52px; }
+.about-body { 
+  padding: 72px 52px; 
+  position: relative;
+}
+
+/* Floating photos in about sections */
+.about-floating-photo {
+  position:        absolute;
+  border-radius:   50%;
+  border:          2px solid rgba(185,28,28,0.08);
+  overflow:        hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow:      0 4px 12px rgba(0,0,0,0.06);
+  transition:      transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-floating-photo:hover {
+  transform:  scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.about-photo-1 {
+  width:  100px;
+  height: 100px;
+  top:    100px;
+  right:  60px;
+}
+
+.about-photo-2 {
+  width:  80px;
+  height: 80px;
+  top:    400px;
+  left:   40px;
+}
+
+.about-photo-3 {
+  width:  120px;
+  height: 120px;
+  bottom: 200px;
+  right:  80px;
+}
 
 .role-cards { display: grid; gap: 1px; background: var(--border); margin-top: 48px; }
 
