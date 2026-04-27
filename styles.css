@@ -953,8 +953,12 @@ footer {
   gap:                   20px;
 }
 
-.member-card { position: relative; transition: transform 0.2s; }
-.member-card:hover { transform: translateY(-2px); }
+.member-card img {
+  width: 240px;      /* or 100px / 80px depending on your design */
+  height: 240px;
+  object-fit: cover; /* keeps face cropped nicely instead of stretching */
+  border-radius: 12px; /* optional: makes them look cleaner */
+}
 
 .member-photo {
   width: 100%; aspect-ratio: 3 / 4;

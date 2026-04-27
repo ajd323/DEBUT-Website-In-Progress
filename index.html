@@ -351,201 +351,138 @@
     <button class="filter-btn" onclick="filterTeam('business', this)">Business</button>
   </div>
 
-  <div class="members-content">
+  <!-- ─────────────────────────────────────────────
+     TEAM ROSTER (DATA + RENDER SCRIPT)
+───────────────────────────────────────────── -->
 
-    <!-- ── Team Leads ── -->
-    <div class="subteam-section" data-team="leads">
-      <div class="subteam-header">
-        <span class="subteam-section-label">Leadership</span>
-        <span class="subteam-section-title">Team Leads</span>
-      </div>
-      <div class="members-grid">
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Sally Scofield</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Carol Lyu</div></div>
-        </div>
-      </div>
+<div id="team-container"></div>
+
+<script>
+const teams = [
+  {
+    id: "leads",
+    label: "Leadership",
+    title: "Team Leads",
+    members: [
+      { name: "Sally Scofield", img: "static/DEBUT_HEADSHOTS/Sally_Scofield.jpg" },
+      { name: "Carol Lyu", img: "static/DEBUT_HEADSHOTS/Carol_Lyu.JPG" }
+    ]
+  },
+
+  {
+    id: "1a",
+    label: "Subteam",
+    title: "Phase 1A",
+    members: [
+      { name: "Ian Vann", img: "static/DEBUT_HEADSHOTS/Ian_Vann.JPG", lead: true },
+      { name: "Elizabeth Paperno" },
+      { name: "Paige Cobrin", img: "static/DEBUT_HEADSHOTS/Paige_Cobrin.JPG" },
+      { name: "Anna Chen" },
+      { name: "Justin Cohen" },
+      { name: "Rahul Ramarao", img: "static/DEBUT_HEADSHOTS/Rahul Ramarao.JPG" },
+      { name: "Katherine Doniger" },
+      { name: "Russell Tan" },
+      { name: "Olivia Jung" },
+      { name: "Arya Samaratunga" }
+    ]
+  },
+
+  {
+    id: "1b",
+    label: "Subteam",
+    title: "Phase 1B",
+    members: [
+      { name: "Molly Matri", lead: true },
+      { name: "Jedric Jizaiah Aniciete" },
+      { name: "Mireille Antaki" },
+      { name: "Cooper Carrozza" },
+      { name: "Evan Chang" },
+      { name: "Tristan Gelinas" },
+      { name: "Alix Martini" },
+      { name: "Clara Reive" },
+      { name: "Rebecca Schwarzberg", img: "static/DEBUT_HEADSHOTS/Arielle_Schwarzberg.JPG" }
+    ]
+  },
+
+  {
+    id: "2a",
+    label: "Subteam",
+    title: "Phase 2A",
+    members: [
+      { name: "Jess Razy" },
+      { name: "Andrew Leibowitz", img: "static/DEBUT_HEADSHOTS/Andrew_Leibowitz.JPG" },
+      { name: "Asher Ciardiello", img: "static/DEBUT_HEADSHOTS/Asher_C_Photo.JPG" },
+      { name: "Felix Grimm" },
+      { name: "Gloria Zhang" },
+      { name: "Nana Jiraphanphong" },
+      { name: "Nathan Choi" },
+      { name: "Zayaan Hussain" }
+    ]
+  },
+
+  {
+    id: "2b",
+    label: "Subteam",
+    title: "Phase 2B",
+    members: [
+      { name: "Andrew D’Onofrio", img: "static/DEBUT_HEADSHOTS/Andrew_DOnofrio.jpg", lead: true },
+      { name: "Emma Weiss", img: "static/DEBUT_HEADSHOTS/Emma_Weiss.JPG" },
+      { name: "Ally Schwartz", img: "static/DEBUT_HEADSHOTS/AllySchwartz.JPG" },
+      { name: "Nitish Bhamidipati" },
+      { name: "Connie Anagnos", img: "static/DEBUT_HEADSHOTS/Connie_Anaganos.JPG" },
+      { name: "Holbrook Langley", img: "static/DEBUT_HEADSHOTS/Holbrook_Langley.JPG" },
+      { name: "Syon Khatter" },
+      { name: "Bhumika Iroji", img: "static/DEBUT_HEADSHOTS/Bhumika_Iroji.JPG" },
+      { name: "Rawsen Weideman" },
+      { name: "Nathan Briard" }
+    ]
+  },
+
+  {
+    id: "business",
+    label: "Subteam",
+    title: "Business",
+    members: [
+      { name: "Gabriel Benavidez", img: "static/DEBUT_HEADSHOTS/Gabriel_Benavidez.JPG", lead: true },
+      { name: "Christine Lim" },
+      { name: "Alexander Yeung", img: "static/DEBUT_HEADSHOTS/Alexander_Yeung.JPG" },
+      { name: "Lena Thai" },
+      { name: "Ethan Huang" }
+    ]
+  }
+];
+
+// ─────────────────────────────
+// RENDER FUNCTION
+// ─────────────────────────────
+const container = document.getElementById("team-container");
+
+teams.forEach(team => {
+  const section = document.createElement("div");
+  section.className = "subteam-section";
+  section.dataset.team = team.id;
+
+  section.innerHTML = `
+    <div class="subteam-header">
+      <span class="subteam-section-label">${team.label}</span>
+      <span class="subteam-section-title">${team.title}</span>
     </div>
-
-    <!-- ── Phase 1A ── -->
-    <div class="subteam-section" data-team="1a">
-      <div class="subteam-header">
-        <span class="subteam-section-label">Subteam</span>
-        <span class="subteam-section-title">Phase 1A</span>
-      </div>
-      <div class="members-grid">
+    <div class="members-grid">
+      ${team.members.map(m => `
         <div class="member-card">
-          <div class="member-info"><div class="member-name">Ian Vann<span class="member-lead-tag">Lead</span></div></div>
+          ${m.img ? `<img src="${m.img}" alt="${m.name}">` : ""}
+          <div class="member-name">
+            ${m.name}
+            ${m.lead ? `<span class="member-lead-tag">Lead</span>` : ""}
+          </div>
         </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Elizabeth Paperno</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Paige Cobrin</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Anna Chen</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Justin Cohen</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Rahul Ramarao</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Katherine Doniger</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Russell Tan</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Olivia Jung</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Arya Samaratunga</div></div>
-        </div>
-      </div>
+      `).join("")}
     </div>
+  `;
 
-    <!-- ── Phase 1B ── -->
-    <div class="subteam-section" data-team="1b">
-      <div class="subteam-header">
-        <span class="subteam-section-label">Subteam</span>
-        <span class="subteam-section-title">Phase 1B</span>
-      </div>
-      <div class="members-grid">
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Molly Matri<span class="member-lead-tag">Lead</span></div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Jedric Jizaiah Aniciete</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Mireille Antaki</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Cooper Carrozza</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Evan Chang</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Tristan Gelinas</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Alix Martini</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Clara Reive</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Rebecca Schwarzberg</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Phase 2A ── -->
-    <div class="subteam-section" data-team="2a">
-      <div class="subteam-header">
-        <span class="subteam-section-label">Subteam</span>
-        <span class="subteam-section-title">Phase 2A</span>
-      </div>
-      <div class="members-grid">
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Jess Razy</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Andrew Leibowitz</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Asher Ciardiello</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Felix Grimm</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Gloria Zhang</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Nana Jiraphanphong</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Nathan Choi</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Zayaan Hussain</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Phase 2B ── -->
-    <div class="subteam-section" data-team="2b">
-      <div class="subteam-header">
-        <span class="subteam-section-label">Subteam</span>
-        <span class="subteam-section-title">Phase 2B</span>
-      </div>
-      <div class="members-grid">
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Andrew D’Onofrio<span class="member-lead-tag">Lead</span></div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Emma Weiss</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Ally Schwartz</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Nitish Bhamidipati</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Connie Anagnos</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Holbrook Langley</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Syon Khatter</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Bhumika Iroji</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Rawsen Weideman</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Nathan Briard</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Business ── -->
-    <div class="subteam-section" data-team="business">
-      <div class="subteam-header">
-        <span class="subteam-section-label">Subteam</span>
-        <span class="subteam-section-title">Business</span>
-      </div>
-      <div class="members-grid">
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Gabriel Benavidez<span class="member-lead-tag">Lead</span></div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Christine Lim</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Alexander Yeung</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Lena Thai</div></div>
-        </div>
-        <div class="member-card">
-          <div class="member-info"><div class="member-name">Ethan Huang</div></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  container.appendChild(section);
+});
+</script>
 
   <footer>
     <div class="footer-brand">Cornell DEBUT — Biomedical Engineering Project Team</div>
