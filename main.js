@@ -18,24 +18,22 @@
  */
 function showPage(name) {
   // Hide all pages
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-
-  // Remove active from all nav links
-  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  document.querySelectorAll('.page').forEach(p =>
+    p.classList.remove('active')
+  );
 
   // Show the target page
   document.getElementById('page-' + name).classList.add('active');
 
-  // Highlight the matching nav link
-  const pages = ['home', 'about', 'members', 'apply', 'sponsors', 'rnd-devices'];
-  const links = document.querySelectorAll('.nav-link');
-  const index = pages.indexOf(name);
-  if (index !== -1) links[index].classList.add('active');
+  // Update nav highlight based on onclick target
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const target = link.getAttribute('onclick');
+    link.classList.toggle('active', target.includes(name));
+  });
 
   // Scroll to top
   window.scrollTo(0, 0);
 }
-
 
 /**
  * filterTeam
