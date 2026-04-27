@@ -97,7 +97,7 @@ nav::before {
 .nav-brand { display: flex; align-items: center; gap: 11px; cursor: pointer; }
 
 .nav-logo {
-  height: 54px;
+  height: 125px;
   width: auto;
 }
 
@@ -847,6 +847,35 @@ footer {
   color: var(--text-dim);
   line-height: 1.75;
 }
+
+/* Analyst Team Photo Row */
+.role-photo-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.role-photo-box {
+  border: 0.5px solid var(--border);
+  background: var(--bg);
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.role-photo-box:hover {
+  background: var(--bg2);
+  border-color: var(--red);
+}
+
+.role-photo-box img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
