@@ -806,7 +806,7 @@ footer {
   align-items:           start;
 }
 
-/* ── Analyst Role Cards ── */
+/* Analyst Role Cards */
 .role-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -848,15 +848,9 @@ footer {
   line-height: 1.75;
 }
 
-/* Analyst Team Photo Row */
-.role-photo-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 40px;
-}
-
+/* Photo inside each Analyst Role card */
 .role-photo-box {
+  margin-top: 20px;
   border: 0.5px solid var(--border);
   background: var(--bg);
   padding: 8px;
@@ -875,7 +869,6 @@ footer {
   object-fit: cover;
   border-radius: 3px;
 }
-
 
 /* Responsive */
 @media (max-width: 900px) {
