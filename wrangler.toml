@@ -1,6 +1,5 @@
-name = "cornell-debut"
+name = "debutofficialwebsite"
 compatibility_date = "2025-01-01"
 
 [assets]
 directory = "."
-exclude = [".git/**", "README.md", "wrangler.toml"]
